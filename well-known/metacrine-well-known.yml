@@ -1,0 +1,332 @@
+generated: '2026-08-25'
+method: probed
+source: http://metacrine.com/
+name: Metacrine well-known + contract discovery probe
+description: >-
+  Negative probe record for Metacrine. Metacrine, Inc. (Nasdaq: MTCR) was a San Diego
+  clinical-stage biopharmaceutical company. Its stockholders approved a Plan of Dissolution
+  on 2023-03-23 and the company filed a Certificate of Dissolution with the Delaware
+  Secretary of State on 2023-03-24, effective on filing. Its domain metacrine.com has since
+  lapsed: the registration is delegated to Network Solutions' expired-domain nameservers
+  (NS1/NS2.PENDINGRENEWALDELETION.COM) and wildcarded to a Media.net parking address, which
+  answers HTTP 200 with a 122- or 195-byte "Error. Page cannot be displayed" stub for EVERY
+  path on EVERY host. NONE of those 200s is a document. No WellKnown, SecurityTxt, AgentCard,
+  LLMsTxt or OpenAPI pointer is emitted from this probe, and none should ever be emitted from
+  it in a later round.
+
+host_status:
+  host: metacrine.com
+  controlled_by_provider: false
+  disposition: expired-parked
+  registrar: Network Solutions, LLC
+  domain_created: '2014-11-11'
+  registry_expiry: '2026-11-11'
+  whois_updated: '2025-11-12'
+  nameservers:
+  - NS1.PENDINGRENEWALDELETION.COM
+  - NS2.PENDINGRENEWALDELETION.COM
+  a_record: 208.91.197.132
+  https_443: reset
+  https_note: >-
+    TCP 443 accepts the connection then resets before a TLS handshake completes
+    (curl error 35, "Recv failure: Connection reset by peer"). There is no TLS
+    endpoint, so every probe below had to be run over plain HTTP.
+  note: >-
+    The registration date (2014-11-11) matches Metacrine's 2014 founding, so this IS the
+    company's original domain — it has simply lapsed into Network Solutions' pending-renewal-
+    deletion holding state and been pointed at parking. 208.91.197.132 is Confluence Networks
+    (Media.net) parking infrastructure; the served robots.txt is Media.net parking boilerplate
+    (Disallow: /fcmedianet.js, /__media__/js/templates.js, /cmedianet) and is not Metacrine's.
+
+wildcard_dns: true
+wildcard_note: >-
+  Every subdomain tested resolves to the same parking address 208.91.197.132 —
+  www, api, docs, developer, developers, app and investors. None of them is a live host;
+  the wildcard is the parking service, not a developer surface.
+subdomains_resolved:
+- host: www.metacrine.com
+  a_record: 208.91.197.132
+  result: parking-wildcard
+- host: api.metacrine.com
+  a_record: 208.91.197.132
+  result: parking-wildcard
+- host: docs.metacrine.com
+  a_record: 208.91.197.132
+  result: parking-wildcard
+- host: developer.metacrine.com
+  a_record: 208.91.197.132
+  result: parking-wildcard
+- host: developers.metacrine.com
+  a_record: 208.91.197.132
+  result: parking-wildcard
+- host: app.metacrine.com
+  a_record: 208.91.197.132
+  result: parking-wildcard
+- host: investors.metacrine.com
+  a_record: 208.91.197.132
+  result: parking-wildcard
+  note: >-
+    investors.metacrine.com was the company's Q4 investor-relations host and is cited in
+    its own 2022 press releases; it now serves the identical parking stub.
+
+soft_200_catch_all: true
+soft_200_note: >-
+  Every probed path returned HTTP 200 with content-type text/html and a body of either
+  122 bytes or 195 bytes — the same "Error. Page cannot be displayed. Please contact your
+  service provider for more details." stub. A control path that cannot exist
+  (/control-path-does-not-exist-98765) returned the identical 122-byte 200, which is the
+  proof that these are catch-all responses and not documents. Treat all of them as misses.
+
+hosts:
+- host: metacrine.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    document: false
+    result: miss
+    content_type: text/html
+    bytes: 122
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    document: false
+    result: miss
+    content_type: text/html
+    bytes: 122
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    document: false
+    result: miss
+    content_type: text/html
+    bytes: 122
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: null
+    document: false
+    result: miss
+    content_type: text/html
+    bytes: 122
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    document: false
+    result: miss
+    content_type: text/html
+    bytes: 122
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    document: false
+    result: miss
+    content_type: text/html
+    bytes: 195
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    document: false
+    result: miss
+    content_type: text/html
+    bytes: 195
+    note: >-
+      HTML error stub, not a JSON AgentCard object. Fails the STEP 0b shape test
+      (no name/url/version/protocolVersion/capabilities/skills). No AgentCard pointer emitted.
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    document: false
+    result: miss
+    content_type: text/html
+    bytes: 195
+    note: Legacy pre-0.3 A2A path. Same HTML error stub. No AgentCard pointer emitted.
+
+contract_discovery:
+  openapi:
+  - url: http://metacrine.com/openapi.json
+    status: 200
+    content_type: text/html
+    bytes: 195
+    parses_as_openapi: false
+    result: miss
+  - url: http://metacrine.com/openapi.yaml
+    status: 200
+    content_type: text/html
+    bytes: 122
+    parses_as_openapi: false
+    result: miss
+  - url: http://metacrine.com/swagger.json
+    status: 200
+    content_type: text/html
+    bytes: 195
+    parses_as_openapi: false
+    result: miss
+  - url: http://metacrine.com/v1/openapi.json
+    status: 200
+    content_type: text/html
+    bytes: 195
+    parses_as_openapi: false
+    result: miss
+  - url: http://metacrine.com/api-docs
+    status: 200
+    content_type: text/html
+    bytes: 195
+    parses_as_openapi: false
+    result: miss
+  - url: http://metacrine.com/docs
+    status: 200
+    content_type: text/html
+    bytes: 122
+    parses_as_openapi: false
+    result: miss
+  - url: http://metacrine.com/redoc
+    status: 200
+    content_type: text/html
+    bytes: 122
+    parses_as_openapi: false
+    result: miss
+  graphql:
+  - url: http://metacrine.com/graphql
+    status: 200
+    content_type: text/html
+    bytes: 122
+    introspection_attempted: false
+    result: miss
+    note: >-
+      The GET already returns the parking catch-all stub on a host with no TLS and no
+      application behind it; there is no GraphQL endpoint to introspect.
+  mcp: []
+  mcp_note: >-
+    No hosted or stdio MCP server exists. No mcp./api. host resolves to anything but the
+    parking wildcard, and there is no npm or PyPI package under any metacrine name.
+  a2a_agent_card:
+  - url: http://metacrine.com/.well-known/agent-card.json
+    status: 200
+    valid_agent_card: false
+    result: miss
+  - url: http://metacrine.com/.well-known/agent.json
+    status: 200
+    valid_agent_card: false
+    result: miss
+  wsdl: []
+  wsdl_note: No SOAP surface; no ?wsdl or ?singleWsdl endpoint exists on any resolving host.
+  grpc: []
+  grpc_note: No published .proto — no GitHub organization and no buf.build module exists.
+  api_hosts_resolved:
+  - host: api.metacrine.com
+    dns: 208.91.197.132
+    result: parking-wildcard
+  - host: developer.metacrine.com
+    dns: 208.91.197.132
+    result: parking-wildcard
+  - host: docs.metacrine.com
+    dns: 208.91.197.132
+    result: parking-wildcard
+  - host: metacrine.ai
+    dns: NXDOMAIN
+    result: miss
+  - host: metacrine.bio
+    dns: NXDOMAIN
+    result: miss
+
+llms_txt:
+  url: http://metacrine.com/llms.txt
+  status: 200
+  content_type: text/html
+  bytes: 122
+  is_real_llms_txt: false
+  note: >-
+    Returns the parking error stub, not an llms.txt (no H1, no link sections).
+    Recorded as a MISS. No LLMsTxt pointer emitted, and no llms.txt is generated for a
+    dissolved company with no product surface to describe.
+
+robots_txt:
+  url: http://metacrine.com/robots.txt
+  status: 200
+  content_type: text/plain
+  bytes: 292
+  first_party: false
+  verbatim: |
+    User-agent: *
+    Disallow: /fcmedianet.js
+    Disallow: /__media__/js/templates.js
+    Disallow: /cmedianet
+    Disallow: /cmdynet
+    Disallow: /mediamainlog.php
+    User-agent: Googlebot
+    Disallow:
+    User-agent: Slurp
+    Disallow:
+    User-agent: MSNBot
+    Disallow:
+    User-agent: ia_archiver
+    Disallow:
+    User-agent: *
+    Disallow: /
+  note: >-
+    This is the only real document served on the host, and it is NOT Metacrine's — it is
+    Media.net/Confluence Networks parking boilerplate (the /fcmedianet.js and
+    /__media__/js/ paths are the parking system's own). It says nothing about Metacrine.
+
+sitemap:
+  url: http://metacrine.com/sitemap.xml
+  status: 200
+  content_type: text/html
+  bytes: 195
+  result: miss
+  note: Returns the HTML error stub, not XML. No crawlable index exists.
+
+other_surfaces:
+- what: GitHub organization
+  url: https://api.github.com/orgs/metacrine
+  status: 404
+  result: miss
+- what: GitHub repository search "metacrine"
+  url: https://api.github.com/search/repositories?q=metacrine
+  status: 200
+  result: miss
+  note: total_count 0 — no repository anywhere on GitHub carries the name.
+- what: npm registry package
+  url: https://registry.npmjs.org/metacrine
+  status: 404
+  result: miss
+- what: npm registry search "metacrine"
+  url: https://registry.npmjs.org/-/v1/search?text=metacrine
+  status: 200
+  result: miss
+  note: total 0 — no npm package under any metacrine name.
+- what: PyPI
+  url: https://pypi.org/pypi/metacrine/json
+  status: 404
+  result: miss
+- what: RubyGems
+  url: https://rubygems.org/api/v1/gems/metacrine.json
+  status: 404
+  result: miss
+- what: crates.io
+  url: https://crates.io/api/v1/crates/metacrine
+  status: 404
+  result: miss
+- what: SEC EDGAR 8-K (CIK 0001634379) reporting the Certificate of Dissolution
+  url: https://www.sec.gov/Archives/edgar/data/1634379/000119312523079293/d453945d8k.htm
+  status: 200
+  result: hit
+  note: >-
+    Primary-source confirmation of dissolution. Filed 2023-03-24 with the Delaware
+    Secretary of State under DGCL Section 275, effective upon filing.
+- what: Forge Global secondary-market listing (the harvest source)
+  url: https://forgeglobal.com/metacrine_stock/
+  status: 403
+  result: blocked
+  note: >-
+    Forge returns 403 to non-browser clients including a browser User-Agent. It is a
+    secondary-market share listing, not a company site, and is wired as
+    type SecondaryMarket rather than type Website (roadmap#56).
+
+conclusion: >-
+  Metacrine has no API surface to enrich and no host it still controls. The company was a
+  clinical-stage biopharmaceutical developer, not a software vendor, and it never published a
+  developer program, public API, SDK, or machine-readable specification while it existed. It
+  dissolved in March 2023 and its domain has since lapsed into an expired-domain parking
+  wildcard. This is a historical record, not a thin profile. Any future round should re-read
+  host_status before probing metacrine.com again.
