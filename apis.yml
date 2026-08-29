@@ -21,6 +21,9 @@ description: >-
   specification of any kind. Its domain metacrine.com has since lapsed and is parked. This profile
   is retained as a historical record; there is no API surface to enrich.
 url: https://raw.githubusercontent.com/api-evangelist/metacrine/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
+x-api-posture-note: "Metacrine was a drug developer, not a software vendor, and it never published a developer program, public API, SDK, webhook surface, or machine-readable specification of any kind."
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
