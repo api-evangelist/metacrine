@@ -45,6 +45,17 @@ x-domain-note: >-
   Page cannot be displayed" stub — including a control path that cannot exist. Those 200s are not
   documents. See well-known/metacrine-well-known.yml. metacrine.com is NOT wired as a Website
   pointer.
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 specificationVersion: '0.23'
 created: '2026-08-25'
 modified: '2026-08-25'
