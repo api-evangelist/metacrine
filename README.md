@@ -64,5 +64,28 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
+
 Metacrine, Inc. was a San Diego, California clinical-stage biopharmaceutical company founded in 2014 to develop differentiated therapies for liver and gastrointestinal disease. It built a proprietary farnesoid X receptor (FXR) platform on a distinct chemical scaffold and advanced two oral, once-daily FXR agonists — MET409 and MET642 — through Phase 1 and Phase 2 trials in non-alcoholic steatohepatitis (NASH), alongside exploratory work in inflammatory bowel disease. Backed by ARCH Venture Partners, Polaris Partners, venBio and EcoR1 Capital, it raised a $36M round in 2015 and a $65M Series C in June 2018 before pricing an initial public offering on 2020-09-15 of 6,540,000 shares at $13.00, for roughly $85.0M gross, and listing on the Nasdaq Capital Market as MTCR. Equillium, Inc. agreed to acquire the company in an all-stock transaction announced 2022-09-06, but the two mutually terminated the merger agreement on 2022-12-23. The board approved a Plan of Dissolution on 2023-01-24; Nasdaq issued a minimum-bid-price delisting notice on 2023-01-31, trading was suspended on 2023-02-09 and delisting took effect 2023-03-13; the FXR program assets were sold under a February 2023 term sheet for up to $4.0M in cash plus assumed liabilities; stockholders approved the dissolution on 2023-03-23; and the company filed a Certificate of Dissolution with the Delaware Secretary of State on 2023-03-24, effective on filing under DGCL Section 275. Metacrine was a drug developer, not a software vendor, and it never published a developer program, public API, SDK, webhook surface, or machine-readable specification of any kind. Its domain metacrine.com has since lapsed and is parked. This profile is retained as a historical record; there is no API surface to enrich.
-- SecondaryMarket: https://forgeglobal.com/metacrine_stock/
+
+**Areas:** Company · Defunct · Biotechnology · Pharmaceuticals · Life Sciences · Clinical Trials · Drug Discovery · Therapeutics · Healthcare
+
+## Metacrine on APIs.io (historical record)
+
+Everything profiled for Metacrine is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/metacrine/](https://apis.io/providers/metacrine/)** — or go straight to one of the APIs or properties below.
+
+## API Evangelist rating
+
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Metacrine: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/metacrine/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
